@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 禁用状态下的样式 */
+        #myButton:disabled {
+            background-color: rgb(255, 255, 255);
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="myButton">点击开始倒计时</button>
+    <script>
+        // 获取按钮元素
+        var button = document.getElementById("myButton");
+        // 定时器的标识变量
+        var timer;
+        // 倒计时函数
+        function countdown() {
+            var seconds = 6; // 倒计时的秒数
+            // 每隔一秒更新倒计时的时间
+            timer = setInterval(function () {
+                seconds--;
+                // 更新按钮上的文字显示
+                button.innerText = seconds + "s";
+                // 如果倒计时结束，清除定时器并重新启用按钮
+                if (seconds <= 0) {
+                    clearInterval(timer);
+                    button.disabled = false;
+                    button.innerText = "点击开始倒计时";
+                }
+            }, 1000);
+            // 按钮禁用，避免多次点击
+            button.disabled = true;
+        }
+        // 绑定按钮的点击事件
+        button.addEventListener("click", countdown);
+    </script>
+</body>
+
+</html>

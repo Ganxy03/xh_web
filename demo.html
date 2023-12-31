@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倒计时按钮</title>
+</head>
+
+<body>
+    <button id="myButton">点击我</button>
+    <button id="myButton">点击开始倒计时</button>
+
+    <script>
+        const button = document.getElementById('myButton');
+        let countdown;
+
+        button.addEventListener('click', () => {
+            // 禁用按钮
+            button.disabled = true;
+
+            // 开始倒计时
+            countdown = setTimeout(() => {
+                // 倒计时结束后重新启用按钮
+                button.disabled = false;
+            }, 3000); // 60000毫秒等于60秒
+        });
+    </script>
+</body>
+
+</html>

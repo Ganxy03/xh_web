@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    
+        <title>Halo</title>
+        <style type="text/css" media="all">
+            .card {
+                border: 1px solid #000;
+                width: 100%;
+                margin-top: 220px;
+            }
+            .content {
+                width: 90%;
+                color: red;
+                font-size: 36px;
+                margin: 0 auto;
+            }
+            
+            .btn {
+                font-size: 32px;
+                
+            }
+
+            /*@media screen and (max-width: 768px) {*/
+            /*    .card {*/
+            /*        border: 1px solid #000;*/
+            /*        width: 720px;*/
+            /*    }*/
+            /*    .content {*/
+            /*        font-size: 36px;*/
+            /*    }*/
+            /*}*/
+        </style>
+    </head>
+<body>
+    <div class="card">
+        <p class="content">
+            <?php
+            // echo "Hello World!";
+            $url = 'http://20.re/api/1/api.php?type=骚话'; // 请求的URL
+            $response = file_get_contents($url); // 发起GET请求并获取响应数据
+            echo $response; // 输出响应数据
+            ?>
+        </p>
+        <!-- <button class="btn" type="submit">请求</button> -->
+        <form method="post" action="halo.php">
+            <input class="btn" type="submit" name="submitBtn" value="请求">
+        </form>
+    </div>
+
+
+
+    <div style="border: 2px solid #0c13d7;width: 300px;height: 120px;"><p>this.fingerprint</p><p><span>有效</span><span>记录</span></p></div>
+</body>
+</html>
